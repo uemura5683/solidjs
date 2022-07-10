@@ -1,7 +1,7 @@
 /* @refresh reload */
 import { render } from 'solid-js/web';
 import Nested from './nested';
-import { createSignal, createEffect } from "solid-js";
+import { createSignal, createEffect, createMemo, Show } from "solid-js";
 
 function HelloWorld() {
   const name = "Solid";
@@ -48,22 +48,73 @@ function HelloWorld() {
   /**
    * 導入 / MEMO
    * https://www.solidjs.com/tutorial/introduction_memos
+   * Memo は Effect のようなオブザーバーであると同時に、読み取り専用の Signal でもあります。
+   * Memo の作成は、solid-js からインポートできる createMemo に関数を渡すだけで簡単です。この例では、クリックするたびに値を再計算するコストが高くなっていきます。これを createMemo でラップすると、1 回のクリックで 1 回だけ再計算されます:
    */
 
+  function fibonacci(num) {
+    if (num <= 1) return 1;
+    console.log("Calculating Fibonacci");
+    return fibonacci(num - 1) + fibonacci(num - 2);
+  }
 
+  function Counter() {
+    const [count, setCount] = createSignal(10);
+    const fib = createMemo(() => fibonacci(count()));
+
+    return (
+      <>
+        <div style="margin: 0 0 20px;">
+        <button onClick={() => setCount(count() + 1)}>Count: {count()}</button>
+        <div>1. {fib()} {fib()} {fib()} {fib()} {fib()}</div>
+        <div>2. {fib()} {fib()} {fib()} {fib()} {fib()}</div>
+        <div>3. {fib()} {fib()} {fib()} {fib()} {fib()}</div>
+        <div>4. {fib()} {fib()} {fib()} {fib()} {fib()}</div>
+        <div>5. {fib()} {fib()} {fib()} {fib()} {fib()}</div>
+        <div>6. {fib()} {fib()} {fib()} {fib()} {fib()}</div>
+        <div>7. {fib()} {fib()} {fib()} {fib()} {fib()}</div>
+        <div>8. {fib()} {fib()} {fib()} {fib()} {fib()}</div>
+        <div>9. {fib()} {fib()} {fib()} {fib()} {fib()}</div>
+        <div>10. {fib()} {fib()} {fib()} {fib()} {fib()}</div>
+        </div>
+      </>
+    );
+  }
+
+  /**
+  * 制御フロー SHOW
+  **/
+  const [loggedIn, setLoggedIn] = createSignal(false);
+  const toggle = () => setLoggedIn(!loggedIn())
+
+  /**
+  * 制御フロー For
+  * https://www.solidjs.com/tutorial/flow_for
+  **/
+ 
   return (
     <>
       <div>Hello {name}!</div>
       <Nested />
       {svg}
       <h3>導入 / Signal</h3>
-      <div>Count: {count()}</div>
+      <div style="margin: 0 0 20px;">Count: {count()}</div>
       <h3>導入 / Effect</h3>
       <button onClick={() => setclickCount(clickcount() + 1)}>Click Me</button>
       <h3>導入 / 派生 / Signal</h3>
-      <div>Count: {doubleCount()}</div>
+      <div style="margin: 0 0 20px;">Count: {doubleCount()}</div>
+      <h3>導入 / MEMO</h3>
+      <Counter />
+      <h3>制御フロー / SHOW</h3>
+      <Show
+        when={loggedIn()}
+        fallback={() => <button onClick={toggle}>Log in</button>}
+      >
+        <button onClick={toggle}>Log out</button>
+      </Show>      
     </>
   )
+
 }
 
 render(() => <HelloWorld />, document.getElementById('root'))
