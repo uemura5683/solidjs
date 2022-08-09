@@ -1,3 +1,12 @@
+h3 {
+  border-bottom: 1px solid #ccc;
+  border-top: 1px solid #ccc;
+  padding: 10px 0;
+  text-align: center;
+  background: #ccc;
+  font-weight: normal;
+}
+
 .app-container {
   width: 200px;
   height: 100px;
@@ -22,4 +31,30 @@
   border-width: 5px;
   border-style: solid;
   border-color: transparent transparent #ddd transparent;
+}
+
+.photos {
+  display: flex;
+  flex-wrap: wrap;
+}
+.photos figure {
+  width: calc(100% / 10 - 20px);
+  margin: 10px;
+}
+
+/**
+* https://www.solidjs.com/tutorial/bindings_classlist
+**/
+.classlist {
+  display: flex;
+  flex-wrap: wrap;
+}
+button {
+  display: block;
+  margin: 0 10px 0 0;
+}
+
+.selected {
+  background-color: #ff3e00;
+  color: white;
 }
