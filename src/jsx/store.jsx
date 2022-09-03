@@ -43,24 +43,24 @@ function Nest() {
    * https://www.solidjs.com/tutorial/stores_mutation
    * ストア / ミューテーション
    */
-   let myuinput;
-   let myutodoId = 0;
-   const [myu, setmyu] = createStore({ todos: [] })
-   const myuaddTodo = (text) => {
+  let myuinput;
+  let myutodoId = 0;
+  const [myu, setmyu] = createStore({ todos: [] })
+  const myuaddTodo = (text) => {
     setmyu(
-       'todos',
-       produce((todos) => {
-         todos.push({ id: ++myutodoId, text, completed: false });
-       }),
-     );
-   };
-   const myutoggleTodo = (id) => {
+      'todos',
+      produce((todos) => {
+        todos.push({ id: ++myutodoId, text, completed: false });
+      }),
+    );
+  };
+  const myutoggleTodo = (id) => {
     setmyu(
-       'todos',
-       todo => todo.id === id,
-       produce((todo) => (todo.completed = !todo.completed)),
-     );
-   };
+      'todos',
+      todo => todo.id === id,
+      produce((todo) => (todo.completed = !todo.completed)),
+    );
+  };
 
   return (
     <>
@@ -151,6 +151,8 @@ function Nest() {
           }}
         </For>
       </div>
+      <h3>ストア / コンテキスト</h3>
+      <a href="/store2.html" target="_blank">ストア / コンテキスト</a>
     </>
   )
 }
