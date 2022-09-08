@@ -153,6 +153,10 @@ function Nest() {
       </div>
       <h3>ストア / コンテキスト</h3>
       <a href="/store2.html" target="_blank">ストア / コンテキスト</a>
+      <h3>ストア / イミューダブルなストア</h3>
+      <a href="/store3.html" target="_blank">ストア / イミューダブルなストア</a>
+      <h3>ストア / コンテキストを使わない場合</h3>
+      <a href="/store4.html" target="_blank">ストア / コンテキストを使わない場合</a>
     </>
   )
 }
