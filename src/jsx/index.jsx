@@ -14,6 +14,7 @@ function TopIndex() {
           <li><a href="/binding.html" target="_blank">バインディング</a></li>
           <li><a href="/props.html" target="_blank">Props</a></li>
           <li><a href="/store.html" target="_blank">ストア</a></li>
+          <li><a href="/reactivity.html" target="_blank">リアクティビティ</a></li>
           <li><a href="https://www.solidjs.com/" target="_blank">Solidjs</a></li>
         </ul>
       </div>
