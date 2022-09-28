@@ -1,2 +1,0 @@
-現在の状況
-https://www.solidjs.com/tutorial/introduction_components
