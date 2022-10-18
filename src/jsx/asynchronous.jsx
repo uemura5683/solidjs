@@ -13,6 +13,8 @@ function App() {
       <a href="/asynchronous3.html" target="_blank">非同期 / Suspense</a>
       <h3>非同期 / SuspenseList</h3>
       <a href="/asynchronous4.html" target="_blank">非同期 / SuspenseList</a>
+      <h3>非同期 / トランジション</h3>
+      <a href="/asynchronous5.html" target="_blank">非同期 / トランジション</a>
     </>
   );
 }
