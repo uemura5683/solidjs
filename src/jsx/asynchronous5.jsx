@@ -1,13 +1,13 @@
 import { createSignal, Suspense, Switch, Match, useTransition } from "solid-js";
 import { render } from "solid-js/web";
 import Child from "../components/asynchronous/child";
-import "../assets/css/styles2.css";
+import "../assets/css/styles.css";
+import "../assets/css/asynchronous5.css";
 
-const App = () => {
+const AsyncHronous5 = () => {
   const [tab, setTab] = createSignal(0);
   const [pending, start] = useTransition();
   const updateTab = (index) => () => start(() => setTab(index));
-
   return (
     <>
       <ul class="inline">
@@ -39,5 +39,4 @@ const App = () => {
     </>
   );
 };
-
-render(App, document.getElementById("root"));
+render(AsyncHronous5, document.getElementById("root"));

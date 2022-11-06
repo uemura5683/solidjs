@@ -1,5 +1,6 @@
 import { createSignal, createResource } from "solid-js";
 import { render } from "solid-js/web";
+import "../assets/css/styles.css";
 
 /**
  * 
@@ -7,14 +8,12 @@ import { render } from "solid-js/web";
  * https://www.solidjs.com/tutorial/async_resources?solved
  * 
 */
-
 const fetchUser = async (id) =>
   (await fetch(`https://swapi.dev/api/people/${id}/`)).json();
 
-const App = () => {
+const AsyncHronous2 = () => {
   const [userId, setUserId] = createSignal();
   const [user] = createResource(userId, fetchUser);
-
   return (
     <>
       <input
@@ -30,5 +29,4 @@ const App = () => {
     </>
   );
 };
-
-render(App, document.getElementById("root"));
+render(AsyncHronous2, document.getElementById("root"));

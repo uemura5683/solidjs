@@ -1,17 +1,16 @@
 // @ts-nocheck
 import { render } from "solid-js/web";
 import { For } from "solid-js";
-
 import useRedux from "../components/store2/useRedux";
 import reduxStore from "../components/store2/store";
 import actions from "../components/store2/actions";
+import "../assets/css/styles.css";
 
 /**
  * @returns 
  * https://www.solidjs.com/tutorial/stores_immutable?solved
  */
-
- const App = () => {
+const Store3 = () => {
   const [store, { addTodo, toggleTodo }] = useRedux(
     reduxStore,
     actions
@@ -19,7 +18,8 @@ import actions from "../components/store2/actions";
   let input;
   return (
     <>
-      <div>
+    <div class="c-nest-component c-form-component">
+      <div class="c-search">
         <input ref={input} />
         <button
           onClick={(e) => {
@@ -35,7 +35,7 @@ import actions from "../components/store2/actions";
         {(todo) => {
           const { id, text } = todo;
           console.log("Create", text)
-          return <div>
+          return <div class="c-checkbox">
             <input
               type="checkbox"
               checked={todo.completed}
@@ -47,8 +47,8 @@ import actions from "../components/store2/actions";
           </div>
         }}
       </For>
+    </div>
     </>
   );
 };
-
-render(App, document.getElementById("app"));
+render(Store3, document.getElementById("app"));

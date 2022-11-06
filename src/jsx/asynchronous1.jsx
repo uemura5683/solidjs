@@ -1,8 +1,8 @@
 import { render } from "solid-js/web";
 import { lazy } from "solid-js";
+import "../assets/css/styles.css";
 
 const Greeting = lazy(() => import("../components/asynchronous/greeting"));
-
 /**
  * 
  * @returns
@@ -10,7 +10,7 @@ const Greeting = lazy(() => import("../components/asynchronous/greeting"));
  * 
 */
 
-function App() {
+function AsyncHronous1() {
   return (
     <>
       <h1>Welcome</h1>
@@ -18,5 +18,4 @@ function App() {
     </>
   );
 }
-
-render(() => <App />, document.getElementById("root"));
+render(() => <AsyncHronous1 />, document.getElementById("root"));

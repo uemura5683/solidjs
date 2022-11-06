@@ -4,7 +4,7 @@ import Nested from '../components/nested';
 import { createSignal, createEffect, createMemo} from "solid-js";
 import "../assets/css/styles.css";
 
-function HelloWorld() {
+function Basic() {
   const name = "Solid";
   const svg = (
     <svg height="300" width="400">
@@ -66,7 +66,6 @@ function HelloWorld() {
   function Counter() {
     const [count, setCount] = createSignal(10);
     const fib = createMemo(() => fibonacci(count()));
-
     return (
       <>
         <div style="margin: 0 0 20px;">
@@ -86,7 +85,6 @@ function HelloWorld() {
     );
   }
 
-
   return (
     <>
       <div>Hello {name}!</div>
@@ -103,5 +101,4 @@ function HelloWorld() {
     </>
   )
 }
-
-render(() => <HelloWorld />, document.getElementById('root'))
+render(() => <Basic />, document.getElementById('root'))

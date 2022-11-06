@@ -63,12 +63,9 @@ import "../assets/css/styles.css";
  * 
  */
 
-
 function PropsIndex() {
   const [name, setName] = createSignal();
-
   const [name2, setName2] = createSignal("Jakob");
-
   const [color, setColor] = createSignal("purple");
   return (
     <>
@@ -100,5 +97,4 @@ function PropsIndex() {
     </>
   )
 }
-
 render(() => <PropsIndex />, document.getElementById('root'))

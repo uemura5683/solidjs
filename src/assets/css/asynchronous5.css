@@ -1,14 +1,3 @@
-body{
-  background-color:#eee;
-}
-
-#app{
-  border-radius:3px;
-  border: 1px solid #e5e5e5;
-  margin:15px;
-  background-color:white;
-}
-
 .tab{
   padding:25px;
   font-family:sans-serif;
@@ -48,7 +37,8 @@ ul.inline li {
 
 ul.inline li.selected{
   border-bottom:2px solid #337ab7;
-  color:#444;
+  color: #ffffff;
+  background-color: #337ab7;
 }
 
 .loader{

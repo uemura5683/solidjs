@@ -44,7 +44,6 @@ function FlowIndex() {
   *   </li>
   * }</Index>
   * */
-
   const [cats, setCats] = createSignal([
     { id: 'J---aiyznGQ', name: 'Keyboard Cat' },
     { id: 'z_AbfPXTKms', name: 'Maru' },
@@ -69,7 +68,6 @@ function FlowIndex() {
   * </Switch>
   * 
   * */
-
   const [switchx] = createSignal(4);
 
   /**
@@ -82,7 +80,6 @@ function FlowIndex() {
   *   <Match when={selected() === 'green'}><GreenThing /></Match>
   * </Switch>
   **/
-
   const RedThing = () => <strong style="color: red">Red Thing</strong>;
   const GreenThing = () => <strong style="color: green">Green Thing</strong>;
   const BlueThing = () => <strong style="color: blue">Blue Thing</strong>;
@@ -102,7 +99,6 @@ function FlowIndex() {
   * Solid には <Portal> コンポーネントがあり、その子コンテンツは選択した場所に挿入されます。デフォルトでは、その要素は document.body 内の <div> にレンダリングされます。
   **/
 
-
   /**
   * https://www.solidjs.com/tutorial/flow_error_boundary
   * 制御フロー / Error Boundary
@@ -111,7 +107,6 @@ function FlowIndex() {
   *  <Broken />
   * </ErrorBoundary>
   **/
-
   const Broken = (props) => {
     throw new Error("Oh No");
     return <>ここには到達しない</>
@@ -181,5 +176,4 @@ function FlowIndex() {
     </>
   )
 }
-
 render(() => <FlowIndex />, document.getElementById('root'))

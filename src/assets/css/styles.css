@@ -1,6 +1,13 @@
+:root {
+  --white: #ffffff;
+  --gray: #333333;
+  --gray2: #cccccc;
+  --blue: #325B9A;
+  --red: #ff3e00;
+}
 body {
   margin: 0; 
-  color: #333;
+  color: var(--gray);
 }
 ul, ol {
   list-style: none;
@@ -8,17 +15,40 @@ ul, ol {
   padding: 0;
 }
 a {
-  color: #333;
+  color: var(--gray);
 }
-h3 {
-  border-bottom: 1px solid #ccc;
-  border-top: 1px solid #ccc;
+h1, h2, h3 {
+  border-bottom: 1px solid var(--gray2);
+  border-top: 1px solid var(--gray2);
   padding: 10px 0;
   text-align: center;
-  background: #ccc;
+  background: var(--gray2);
   font-weight: normal;
 }
-#root {
+h1 {
+  background: var(--blue);
+  color: var(--white);
+}
+input, select {
+  height: 34px;
+  width: 200px;
+}
+input[type="checkbox"],input[type="radio"] {
+  width: 30px;
+}
+select {
+  margin: 0 10px 0 0;
+}
+button {
+  width: 200px;
+  height: 40px;
+  display: block;
+  margin: 0;
+  border: none;
+  background-color: var(--blue);
+  color: var(--white);
+}
+#root, #app {
   padding: 1rem;
 }
 
@@ -31,7 +61,7 @@ h3 {
 .popup {
   position: relative;
   z-index: 2;
-  background: #ddd;
+  background: var(--gray2);
   padding: 1rem;
   min-height: 200px;
   min-width: 200px;
@@ -45,7 +75,7 @@ h3 {
   margin-left: -5px;
   border-width: 5px;
   border-style: solid;
-  border-color: transparent transparent #ddd transparent;
+  border-color: transparent transparent var(--gray2) transparent;
 }
 
 .photos {
@@ -64,14 +94,9 @@ h3 {
   display: flex;
   flex-wrap: wrap;
 }
-button {
-  display: block;
-  margin: 0 10px 0 0;
-}
-
 .selected {
-  background-color: #ff3e00;
-  color: white;
+  background-color: var(--red);
+  color: var(--white);
 }
 
 /**
@@ -83,4 +108,37 @@ button {
 .c-form-component {
   display: flex;
   flex-wrap: wrap;
+}
+
+/**
+* search
+**/
+.c-search {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/**
+* checkbox
+**/
+.c-checkbox {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.c-checkbox input {
+  margin: 0 10px;
+}
+
+/**
+* count
+**/
+.c-count {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.c-count button {
+  margin: 0 0 0 10px;
+  width: 50px;
 }

@@ -1,8 +1,7 @@
 import { render } from "solid-js/web";
-import { lazy } from "solid-js";
 import "../assets/css/styles.css";
 
-function App() {
+function AsyncHronous() {
   return (
     <>
       <h3>非同期 / 遅延コンポーネント</h3>
@@ -18,5 +17,4 @@ function App() {
     </>
   );
 }
-
-render(() => <App />, document.getElementById("root"));
+render(() => <AsyncHronous />, document.getElementById("root"));

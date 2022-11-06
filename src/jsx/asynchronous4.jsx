@@ -1,10 +1,10 @@
 import { render } from "solid-js/web";
 import { Suspense } from "solid-js";
-
 import fetchProfileData from "../components/asynchronous/mock-api";
 import ProfilePage from "../components/asynchronous/profile"
+import "../assets/css/styles.css";
 
-const App = () => {
+const AsyncHronous4 = () => {
   const { user, posts, trivia } = fetchProfileData();
   return (
     <Suspense fallback={<h1>Loading...</h1>}>
@@ -12,5 +12,4 @@ const App = () => {
     </Suspense>
   );
 };
-
-render(App, document.getElementById("root"));
+render(AsyncHronous4, document.getElementById("root"));

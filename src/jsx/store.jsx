@@ -4,8 +4,7 @@ import { For, createSignal } from "solid-js";
 import { createStore, produce } from "solid-js/store";
 import "../assets/css/styles.css";
 
-function Nest() {
-
+function Store() {
   /**
    * https://www.solidjs.com/tutorial/stores_nested_reactivity
    * ストア / ネストしたリアクティビティ
@@ -61,7 +60,6 @@ function Nest() {
       produce((todo) => (todo.completed = !todo.completed)),
     );
   };
-
   return (
     <>
       <h3>ストア / ネストしたリアクティビティ</h3>
@@ -80,7 +78,7 @@ function Nest() {
           {(todo) => {
             const { id, text } = todo;
             console.log(`Creating ${text}`)
-            return <div>
+            return <div class="c-checkbox">
               <input
                 type="checkbox"
                 checked={todo.completed}
@@ -109,7 +107,7 @@ function Nest() {
           {(todo) => {
             const { id, text } = todo;
             console.log(`Creating ${text}`)
-            return <div>
+            return <div class="c-checkbox">
               <input
                 type="checkbox"
                 checked={todo.completed}
@@ -138,7 +136,7 @@ function Nest() {
           {(todo) => {
             const { id, text } = todo;
             console.log(`Creating ${text}`)
-            return <div>
+            return <div class="c-checkbox">
               <input
                 type="checkbox"
                 checked={todo.completed}
@@ -160,5 +158,4 @@ function Nest() {
     </>
   )
 }
-
-render(() => <Nest />, document.getElementById('root'))
+render(() => <Store />, document.getElementById('root'))

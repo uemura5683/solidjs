@@ -1,8 +1,8 @@
 /* @refresh reload */
 import { render } from 'solid-js/web';
 import { createSignal, Show, } from "solid-js";
-import "../assets/css/styles.css";
 import Info from '../components/info';
+import "../assets/css/styles.css";
 
 function BingingIndex() {
 
@@ -19,7 +19,6 @@ function BingingIndex() {
     *    The mouse position is {pos().x} x {pos().y}
     *  </div>
     */
-
   const [eventpos, seteventPos] = createSignal({x: 0, y: 0});
 
   function handleMouseMove(handleMouseMoveevent) {
@@ -145,5 +144,4 @@ function BingingIndex() {
     </>
   )
 }
-
 render(() => <BingingIndex />, document.getElementById('root'))

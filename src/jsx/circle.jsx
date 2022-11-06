@@ -27,9 +27,7 @@ function CircleIndex() {
    * });
    *
    */
-
   const [photos, setPhotos] = createSignal([]);
-
   onMount(async () => {
     const res = await fetch(`https://jsonplaceholder.typicode.com/photos?_limit=20`);
     setPhotos(await res.json());
@@ -50,7 +48,6 @@ function CircleIndex() {
    * const timer = setInterval(() => setCount(count() + 1), 1000);
    * onCleanup(() => clearInterval(timer));
    */
-
   const [cleanupcount, setCleanupCount] = createSignal(0);
   const cleanuptimer = setInterval(() => setCleanupCount(cleanupcount() + 1), 1000);
   onCleanup(() => clearInterval(cleanuptimer));
@@ -71,5 +68,4 @@ function CircleIndex() {
     </>
   )
 }
-
 render(() => <CircleIndex />, document.getElementById('root'))

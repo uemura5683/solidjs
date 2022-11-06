@@ -4,7 +4,6 @@ import { createSignal, batch, createEffect, untrack, on } from "solid-js";
 import "../assets/css/styles.css";
 
 const App = () => {
-
   /**
    * https://www.solidjs.com/tutorial/reactivity_batch
    * リアクティビティ / バッチ更新
@@ -58,5 +57,4 @@ const App = () => {
     </>
   )
 }
-
 render(() => <App />, document.getElementById('root'))

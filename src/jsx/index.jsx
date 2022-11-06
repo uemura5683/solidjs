@@ -27,5 +27,4 @@ function TopIndex() {
     </>
   )
 }
-
 render(() => <TopIndex />, document.getElementById('root'))

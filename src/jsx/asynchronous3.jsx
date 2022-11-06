@@ -1,5 +1,6 @@
 import { render } from "solid-js/web";
 import { lazy, Suspense } from "solid-js";
+import "../assets/css/styles.css";
 
 /**
  * 
@@ -7,14 +8,13 @@ import { lazy, Suspense } from "solid-js";
  * https://www.solidjs.com/tutorial/async_suspense?solved
  * 
 */
-
 const Greeting = lazy(async () => {
   // 遅延をシミュレート
   await new Promise(r => setTimeout(r, 1000))
   return import("../components/asynchronous/greeting")
 });
 
-function App() {
+function AsyncHronous3() {
   return (
     <>
       <h1>Welcome</h1>
@@ -24,5 +24,4 @@ function App() {
     </>
   );
 }
-
-render(App, document.getElementById("root"));
+render(AsyncHronous3, document.getElementById("root"));
